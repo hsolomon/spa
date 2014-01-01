@@ -87,6 +87,15 @@
           //don't take action if slider is in transition
           return false;
         }
+
+        // Event handler /onClickSlider/
+        // receives click event and calls toggleSlider
+        //
+        onClickSlider = function  (event) {
+          toggleSlider();
+          return false;
+        };
+
     });
     </script>
   </head>
