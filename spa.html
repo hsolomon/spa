@@ -63,6 +63,30 @@
         //declare other module scope variables
         $chatSlider,
         toggleSlider, onClickSlider, initModule;
+
+        //DOM method /toggleSlider/
+        //alternates slider height
+        //
+        toggleSlider = function  () {
+          var slider_height = $chatSlider.height();
+
+          //extend slider if fully retracted
+          if (slider_height === configMap.retracted_height) {
+            $chatSlider
+              .animate({ height : configMap.extended_height}) 
+              .attr('title', configMap.extended_title);
+            return true;
+          }
+          else if (slider_height === configMap.extended_height) {
+            $chatSlider
+              .animate({height : configMap.retracted_height})
+              .attr('title', configMap.retracted_title);
+            return true;
+          }
+
+          //don't take action if slider is in transition
+          return false;
+        }
     });
     </script>
   </head>
