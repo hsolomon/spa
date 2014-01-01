@@ -96,6 +96,25 @@
           return false;
         };
 
+        //Public method /initModule/
+        // sets initial state and provides feature
+        //
+        initModule = function  ($container) {
+
+          $container.html(configMap.template_html);
+
+          $chatSlider = $container.find('spa-slider');
+          $chatSlider
+            .attr('title', configMap.retracted_title)
+            .click(onClickSlider);
+
+          return true;
+        };
+
+        return { initModule : initModule };
+
+      }( jQuery ));
+
     });
     </script>
   </head>
